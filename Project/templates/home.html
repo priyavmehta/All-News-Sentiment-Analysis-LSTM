@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<br>
+<div class="jumbotron" style="vertical-align: auto;  background-color: #2d3436; 
+background-image: linear-gradient(135deg, #2d3436 0%, #d3d3d3 74%);">
+     <h2 style="text-align: center;">Select News Type</h2>
+     <br>
+     <br>
+     <br>
+
+     <div class="row no-gutters" style="width: 900; text-align: center;">
+        <div class="col-md-4">
+            <a href="{{url_for('article.business_news')}}"><button type="button" class="btn btn-dark btn-lg" style="width: 250px; height: 100px; border-radius: 20px;
+            background-color: #000000; background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">Business</button></a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{url_for('article.health_news')}}"><button type="button" class="btn btn-dark btn-lg" style="width: 250px; height: 100px; border-radius: 20px;
+            background-color: #000000; background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">Health</button></a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{url_for('article.science_news')}}"><button type="button" class="btn btn-dark btn-lg" style="width: 250px; height: 100px; border-radius: 20px;
+            background-color: #000000; background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">Science</button></a>
+        </div>
+     </div>
+
+     <br>
+     <br>
+
+     <div class="row no-gutters" style="width: 300; text-align: center;">
+        <div class="col-md-4">
+            <a href="{{url_for('article.technology_news')}}"><button type="button" class="btn btn-dark btn-lg" style="width: 250px; height: 100px; border-radius: 20px;
+            background-color: #000000; background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">Technology</button></a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{url_for('article.sports_news')}}"><button type="button" class="btn btn-dark btn-lg" style="width: 250px; height: 100px; border-radius: 20px;
+            background-color: #000000; background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">Sports</button></a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{url_for('article.general_news')}}"><button type="button" class="btn btn-dark btn-lg" style="width: 250px; height: 100px; border-radius: 20px;
+            background-color: #000000; background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">General</button></a>
+        </div>
+     </div>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+<div style="vertical-align: auto;  ">
+    {% for article in articles %}
+        <div class="card mb-3" style="max-width:max-content;">
+            {% if article.title %}
+                <h5 class="card-title" style="text-align: center; margin: 10px;">{{article.title}}</h5>
+            {% endif %}
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    {% if article.url_to_image %}
+                        <img src="{{article.url_to_image}}" class="card-img" style="margin: 10px;" alt="health">
+                    {% else %}
+                        <img src="{{url_for('static',filename='health.jpg')}}" class="card-img" style="margin: 10px;">
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        {% if article.author %}
+                            <p class="card-text">Authors : {{article.author}}</p>
+                        {% endif %}
+                        {% if article.published_date %}
+                            <p class="card-text">Published On : {{article.published_date.strftime("%B %d, %Y, %H:%M")}}</p>
+                        {% endif %}
+                        {% if article.source %}
+                            <p class="card-text">{{article.source}}</p>
+                        {% endif %}
+                        <p class="card-text">Description : {{article.description}}</p>
+                        {% if article.sentiment %}
+                        <p>{{article.sentiment}} with probability {{article.probability}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">{{article.summary}}</p>
+                <p>To read full article go on the following website</p>
+                <p class="card-text">{{article.url|urlize}}</p>
+            </div>
+        </div>
+        <br>
+        <br>
+    {% endfor %}
+</div>
+{% endblock %}
